@@ -13,7 +13,7 @@ source:
     - MANIFEST.in.patch
 
 build:
-  number: 1
+  number: 2
 
 # Try this when building with GUI
 #extra:
