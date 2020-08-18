@@ -72,7 +72,7 @@ variables:
         (
         # Run in subshell just to be safe. Don't want workflows to fail because of this.
         mkdir -p /tmp/artifacts/packages
-        cd miniconda/conda-bld || exit 0
+        cd /opt/conda/conda-bld || exit 0
         find -name .cache | xargs rm -rf || true
         for n in rss.xml index.html channeldata.json linux-64 osx-64 noarch broken; do
           cp -rv $n /tmp/artifacts/packages || true
@@ -126,6 +126,7 @@ jobs:
           command: |
             bioconda-utils build recipes config.yml \
             --git-range master HEAD
+      - *store_built_packages
 
   lint:
     <<: *linux
