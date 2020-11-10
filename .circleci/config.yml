@@ -117,7 +117,7 @@ jobs:
           command: |
             bioconda-utils lint recipes config.yml \
             --loglevel debug --full-report \
-            --git-range master HEAD
+            --packages openms-meta
       - run:
           name: Testing
           # Currently, using --docker below causes a permission error on Fedora 27,
@@ -125,7 +125,7 @@ jobs:
           # above. A workaround or an upstream fix would be welcome.
           command: |
             bioconda-utils build recipes config.yml \
-            --git-range master HEAD
+            --packages openms-meta
 
   lint:
     <<: *linux
@@ -140,7 +140,7 @@ jobs:
           command: |
             bioconda-utils lint recipes config.yml \
             --loglevel debug --full-report \
-            --git-range master HEAD
+            --packages openms-meta
 
   # build and test on linux
   test-linux:
@@ -157,7 +157,7 @@ jobs:
             docker pull quay.io/dpryan79/mulled_container:latest
             bioconda-utils build recipes config.yml \
               --docker --mulled-test \
-              --git-range master HEAD
+              --packages openms-meta
             docker rmi quay.io/dpryan79/mulled_container:latest
       - *store_built_packages
       - *store_artifacts
@@ -176,7 +176,7 @@ jobs:
           name: Building and testing
           command: |
             bioconda-utils build recipes config.yml \
-            --git-range master HEAD
+            --packages openms-meta
       - *store_built_packages
       - *store_artifacts
 
@@ -197,7 +197,7 @@ jobs:
             docker pull quay.io/dpryan79/mulled_container:latest
             bioconda-utils build recipes config.yml \
               --docker --mulled-test --anaconda-upload --mulled-upload-target biocontainers \
-              --git-range $CIRCLE_SHA1~1 $CIRCLE_SHA1 \
+              --packages openms-meta \
               --prelint
   # build, test and upload on macos
   upload-macos:
@@ -216,7 +216,7 @@ jobs:
           command: |
             bioconda-utils build recipes config.yml \
               --anaconda-upload \
-              --git-range $CIRCLE_SHA1~1 $CIRCLE_SHA1 \
+              --packages openms-meta \
               --prelint
 
   # build, test and upload for bulk branch on linux
