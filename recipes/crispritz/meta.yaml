@@ -1,4 +1,4 @@
-{% set version = "2.3.1" %}
+{% set version = "2.3.5" %}
 
 package:
   name: crispritz
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/pinellolab/CRISPRitz/archive/v{{ version }}.tar.gz
-  sha256: 021c821a0fcb621df79b51bdd638c9cc227036cc3d19350e1bbae67f9e0dd483
+  sha256: 8d815f7bcfb0b62cbeca6997902f799a358cc1b2d114b68c056526af1299e06c
 
 build:
-  number: 1
+  number: 0
   skip: True  # [osx or py<36]
 
 requirements:
@@ -45,6 +45,7 @@ requirements:
     - libdeflate
     - libcxx
     - python
+    - bedops
 
 test:
   commands:

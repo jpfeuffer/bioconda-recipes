@@ -1,5 +1,5 @@
-{% set version = "1.0.2" %}
-{% set sha256 = "7b83a6858beb4d56dd572996459420580b73162c59d09a6626eb6fe150d11f41" %}
+{% set version = "1.0.9" %}
+{% set sha256 = "b5540b807a79ace6d776e32215cd1305cb9ef3e9b4a640e93862f99bd65846b9" %}
 
 package:
   name: sevenbridges-python

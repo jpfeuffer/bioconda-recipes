@@ -1,5 +1,5 @@
 {% set name = "clipkit" %}
-{% set version = "0.1.2" %}
+{% set version = "0.1.9" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 31bb14f8ea96f92be06b1726b6c53a7a904629acba4dd4d7a1bcf234b5c050a3
+  sha256: 08187121db9e03cd12f4a45783b0f48a421e70152cdc0b2191ed196bd5001088
 
 build:
   number: 0

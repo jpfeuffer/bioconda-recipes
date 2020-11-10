@@ -1,4 +1,4 @@
-{% set version = "2.1.0" %}
+{% set version = "2.4.0" %}
 
 package:
   name: varlociraptor
@@ -6,10 +6,12 @@ package:
 
 build:
   number: 0
+  # TODO remove this skip once https://github.com/rust-bio/rust-htslib/pull/275 is merged.
+  skip: true  # [osx]
 
 source:
   url: https://github.com/varlociraptor/varlociraptor/archive/v{{ version }}.tar.gz
-  sha256: ab08dfab71c73b754c0dbeaf9aaa8946be4395437441d82b39277517ce2d08bf
+  sha256: e2b652fad01619a673b97106798f1e2ca7825095be8c3361683de4ced50dd8e8
 
 requirements:
   build:
@@ -20,9 +22,8 @@ requirements:
     - pkg-config
   host:
     - gsl
-    - openssl
-    - openblas
     - libcblas
+    - openssl
     - zlib
     - bzip2
     - xz
@@ -31,8 +32,6 @@ requirements:
   run:
     - gsl
     - openssl
-    - openblas
-    - libcblas
     - zlib
     - bzip2
     - xz

@@ -1,6 +1,6 @@
 {% set name = "epic2" %}
-{% set version = "0.0.43" %}
-{% set hash_value = "f47468750d3e5fce325ec429507c62f2fb244977c5680d8fd9b638ebf567116a" %}
+{% set version = "0.0.47" %}
+{% set hash_value = "8b3d3a068843762fce256a758683464b70a6f201f42594b6cfe9dd576267e18a" %}
 
 package:
   name: '{{ name|lower }}'
@@ -13,7 +13,7 @@ source:
 build: 
   number: 0
   # Compilation errors on OSX
-  skip: True  # [osx]
+  skip: True  # [osx or py27]
 
 requirements:
   build:
@@ -31,7 +31,6 @@ requirements:
     - numpy
     - pysam
     - natsort
-    - functools32 # [py27]
     - htslib
 
 test:

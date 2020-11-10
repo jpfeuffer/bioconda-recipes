@@ -1,4 +1,4 @@
-{% set version = "0.3.2" %}
+{% set version = "0.3.10" %}
 {% set github = "https://github.com/acidgenomics/DESeqAnalysis" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "{{ github }}/archive/v{{ version }}.tar.gz"
-  sha256: c6753f3d88bceb5f3e17c2edab5e2b285105c533bf475c00e9cd7983c1cee77a
+  sha256: f5a22c47d04eec59accb76c6ffc515fae88e31e3658a078cc930e150ca4c37f5
 
 
 build:
